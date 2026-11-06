@@ -1,0 +1,12 @@
+services:
+  notebook:
+    build: .
+    container_name: ml_cw2_notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      # Mount the local folder into the container so edits and created CSVs sync live
+      - .:/app
+    working_dir: /app
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token=''
+
