@@ -1,46 +1,48 @@
-# Machine Learning Coursework 2
+# Machine Learning Coursework 2 (6001CEM)
 
-Predictive modeling on the **Default of Credit Card Clients** dataset.
+Predictive modeling and end-to-end consultancy project on the **Default of Credit Card Clients** dataset (Taiwan, 2005).
 
 ---
 
-## Running with Docker (No Local Python/Virtual Environment Setup Required)
+## Project Structure (Tasks A to D)
 
-Anyone with [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed can run the entire notebook and environment with a single command.
+All code and analytical experiments are structured into four dedicated Jupyter notebooks named in PascalCase without spaces or underscores:
+
+1. **`PartAProblemAnalysis.ipynb`** (10 Marks)
+   - Business background, problem formulation, feature taxonomy, target variable analysis, and technical justification for Classification.
+2. **`PartBComparativeAnalysis.ipynb`** (10 Marks)
+   - Supervised vs. Unsupervised comparative analysis with empirical K-Means vs. Logistic Regression experimental proof.
+3. **`PartCEDAInvestigation.ipynb`** (10 Marks)
+   - Descriptive statistics, correlation heatmaps, skewness, outlier boxplots, duplicate analysis, and model impact.
+4. **`PartDDataPreparationFeatureEngineering.ipynb`** (15 Marks)
+   - Full 12-step data pipeline: duplicate removal, categorical recoding, feature engineering, scaling, feature selection, PCA evaluation, and SMOTE balancing.
+
+---
+
+## Running with Docker (No Local Setup Required)
+
+Anyone with [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed can run all four notebooks with a single command:
 
 ### 1. Start the Environment
-
-Open a terminal in this project directory and run:
-
 ```bash
 docker compose up
 ```
 
-*(Or without compose: `docker build -t ml-cw2 .` then `docker run -p 8888:8888 -v "%cd%":/app ml-cw2`)*
-
 ### 2. Open Jupyter in Browser
-
-Open your browser and navigate to:
-
+Navigate to:
 ```
 http://localhost:8888
 ```
-
-All libraries (`pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, `jupyter`) are pre-installed. Any changes you make or CSV files generated will automatically sync to your host computer.
+All libraries (`pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, `imbalanced-learn`, `jupyter`) are pre-installed. All edits and exported CSVs sync live with your computer.
 
 ### 3. Stop the Container
-
-When finished, press `Ctrl + C` in the terminal, or run:
-
 ```bash
 docker compose down
 ```
 
 ---
 
-## Running Locally (Alternative)
-
-If you prefer using a local Python virtual environment:
+## Running Locally with Python
 
 ```bash
 # 1. Create and activate virtual environment
@@ -50,6 +52,6 @@ python -m venv .venv
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Launch notebook
+# 3. Launch Jupyter
 jupyter notebook
 ```
