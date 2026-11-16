@@ -1,0 +1,12 @@
+# Python & Environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.log
+
+# Suboptimal / Intermediate KNN Parameter Variations
+PartE_KNN_Weight_Distance.ipynb
+PartE_KNN_Basis_Manhattan.ipynb
+PartE_KNN_RiskBiased_Threshold040.ipynb
